@@ -9,7 +9,8 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
-    "jest:clearCache": "jest --clearCache"
+    "jest:clearCache": "jest --clearCache",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
