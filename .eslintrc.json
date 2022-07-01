@@ -6,13 +6,15 @@
     },
     "extends": [ 
         "standard-with-typescript",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "parserOptions": {
-        "projects": "./tsconfig.json"
+        "project": "./tsconfig.json"
     },
     "rules": {
         "@typescript-eslint/consistent-type-definitions": "off",
-        "@typescript-eslint/strict-boolean-expressions": "off"
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/camelcase": "off"
     }
 }
