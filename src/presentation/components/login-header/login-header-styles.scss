@@ -1,0 +1,13 @@
+@import "../../styles/colors.scss";
+.header {
+        display: flex;
+        padding-top: 19px;
+        flex-direction: column;
+        background: $gradient;
+        align-items: center;
+
+        h1 {
+            color:$white;
+            margin: 16px 0px 40px;
+        }
+    }
