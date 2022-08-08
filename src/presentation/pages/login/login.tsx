@@ -14,13 +14,16 @@ const Login: React.FC<Props> = ({ validation }: Props) => {
     email: '',
     password: '',
     errorMessage: '',
-    emailError: 'Campo obrigatório',
+    emailError: '',
     passwordError: 'Campo obrigatório',
     mainError: ''
   })
 
   useEffect(() => {
-    validation.validate('email', state.email)
+    setState({
+      ...state,
+      emailError: validation.validate('email', state.email)
+    })
   }, [state.email])
   useEffect(() => {
     validation.validate('password', state.password)
@@ -32,8 +35,8 @@ const Login: React.FC<Props> = ({ validation }: Props) => {
       <Context.Provider value={ { state, setState } }>
         <form className={Styles.form}>
           <h2>Login</h2>
-          <Input type="email" name="email" placeholder="Digite seu e-mail" id="" />
-          <Input type="password" name="password" placeholder="Digite sua senha" id="" />
+          <Input type="email" name="email" placeholder="Digite seu e-mail" />
+          <Input type="password" name="password" placeholder="Digite sua senha" />
           <button data-testid="submit" disabled type="submit" className={Styles.submit}>Entrar</button>
           <span className={Styles.link}>Cadastrar conta</span>
           <FormStatus />
